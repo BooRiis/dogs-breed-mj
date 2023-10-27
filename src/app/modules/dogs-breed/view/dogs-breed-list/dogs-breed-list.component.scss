@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .header {
+    width: 690px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font: normal normal medium 34px/84px Gotham;
+      letter-spacing: 0px;
+      color: #024781;
+      margin-top: 16px;
+      margin-left: 230px;
+    }
+
+    .logout {
+      background-color: #2e93ff;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .logout:hover {
+      background-color: #024781;
+      transition: ease 0.4s;
+    }
+  }
+
+  .sub-text {
+    width: 430px;
+    font: normal normal normal 16px/26px Gotham;
+    letter-spacing: 0px;
+    color: #024781;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .breed-input {
+    font: normal normal bold 14px/24px Gotham;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: #024781;
+    margin-bottom: 75px;
+
+    input {
+      width: 690px;
+      height: 72px;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #024781;
+      border-radius: 12px;
+      text-indent: 15px;
+    }
+  }
+}

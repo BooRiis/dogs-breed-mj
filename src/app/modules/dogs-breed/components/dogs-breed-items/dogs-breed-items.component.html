@@ -1,0 +1,34 @@
+<p class="results">{{ breeds?.length }} results</p>
+<div *ngFor="let breed of breeds; let i = index">
+  <div class="item-container">
+    <div class="item-header">
+      <span>{{ breed.name }}</span>
+      <button
+        [ngClass]="{
+          'show-more': openedItemIndices.indexOf(i) === -1,
+          'closed': openedItemIndices.indexOf(i) !== -1
+        }"
+        (click)="onShowMoreClick(i, breed)"
+      >
+        {{ openedItemIndices.indexOf(i) === -1 ? "Show more" : "Close" }}
+      </button>
+    </div>
+
+    <div class="open-content" *ngIf="openedItemIndices.indexOf(i) !== -1">
+      <img [src]="breed.image.url" alt="{{ breed.name }} Image" />
+      <div class="content">
+        <p class="description">{{ breed.temperament }}</p>
+        <div class="grouped-items">
+          <div class="life-span">
+            Life Span:
+            <p>{{ breed.life_span }}</p>
+          </div>
+          <div class="origin">
+            Origin:
+            <p>{{ breed.origin ? breed.origin : "Unknown" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

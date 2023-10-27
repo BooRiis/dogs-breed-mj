@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="header">
+    <h1>Dog breed database</h1>
+    <button class="logout" (click)="onLogout()">Log out</button>
+  </div>
+  <p class="sub-text">
+    Venture into the fascinating world of dog breeds. Discover their unique
+    characteristics, origins and care needs in our comprehensive guide. Whether
+    a seasoned dog lover or in search of your perfect furry friend - find all
+    the answers here!
+  </p>
+  <div class="breed-input">
+    <p>Filter by breed name</p>
+    <input [formControl]="searchControl" placeholder="Breed name" />
+  </div>
+  <app-dogs-breed-items
+    [breeds]="filteredBreeds$ | async | slice : 0 : 10"
+    (showMoreClicked)="onShowMoreClick($event)"
+  ></app-dogs-breed-items>
+</div>
